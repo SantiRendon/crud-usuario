@@ -1,5 +1,12 @@
+import Text "mo:base/Text";
 actor {
-  public query func greet(name : Text) : async Text {
-    return "Hello, " # name # "!";
+
+  private func showLastName(lastname:Text) : async Text {
+    return lastname;
+  };
+
+  public func greet(name : Text) : async Text {
+    let lastname:Text = await showLastName("Rendon C");
+    return "Hello, " # name # lastname # "!";
   };
 };
